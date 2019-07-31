@@ -104,5 +104,28 @@ CREATE TABLE movies_actors (\
 
 #### Modify tables and add a column
 ALTER TABLE examples\
-ADD COLUMN email VARCHAR(50) UNIQUE;\
+ADD COLUMN email VARCHAR(50) UNIQUE,\
+ADD COLUMN nationality VARCHAR(30),\
+ADD COLUMN age INT NOT NULL;\
+
+#### Modify a column's data type
+ALTER TABLE examples\
+ALTER COLUMN nationality TYPE CHAR(3),\
+ALTER COLUMN email TYPE VARCHAR(80);\
+
+#### Insert data into a table
+INSERT INTO tablename (first_name, last_name, email, nationality, age)\
+VALUES ('David', 'Mitchell', 'dmitchell@gmail.com', 'GBR', 43),\
+('Jim', 'Smith', 'jsmith@gmail.com', 'USA', 23)\
+
+#### Update data in a table
+UPDATE tablename\
+SET email = 'ggg@gmail.com', age = 55\
+WHERE example_id = 1;\
+
+#### Delete data from a table
+DELETE from tablename\
+WHERE example_id = 2\
+
+
 
